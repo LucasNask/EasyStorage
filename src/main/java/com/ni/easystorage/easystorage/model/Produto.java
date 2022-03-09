@@ -4,7 +4,6 @@ import lombok.*;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class Produto {
@@ -21,6 +20,6 @@ public class Produto {
 
     private Double peso;
 
-    private String fornecedor;
+    private Integer qtd;
 
 }

@@ -18,16 +18,16 @@ public class FornecedorEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome")
+    @Column
     private String nome;
 
-    @Column(name = "CNPJ")
+    @Column
     private String CNPJ;
 
-    @Column(name = "telefone")
+    @Column
     private String telefone;
 
-    @Column(name = "flagExterior")
+    @Column
     private Boolean flagExterior;
 
     //TODO locais (endereço)

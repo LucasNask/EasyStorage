@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
 
 @Entity
 @Table(name = "produto")
@@ -16,20 +17,22 @@ public class ProdutoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "descricao")
+    @Column
     private String descricao;
 
-    @Column(name = "ean")
+    @Column
     private Long ean;
 
-    @Column(name = "lote")
+    @Column
     private String lote;
 
-    @Column(name = "numeroSerie")
+    @Column
     private String numeroSerie;
 
-    @Column(name = "peso")
+    @Column
     private Double peso;
 
-    //private Integer quantidade;
+    @Column
+    private Integer quantidade;
+
 }
