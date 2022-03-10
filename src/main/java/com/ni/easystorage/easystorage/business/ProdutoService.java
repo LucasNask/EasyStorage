@@ -15,6 +15,7 @@ public class ProdutoService {
     @Autowired
     private ProdutoRepository produtoRepository;
 
+    
     public List<Produto> listProduto(){
        return ProdutoEntityMapper.INSTANCE.mapToList(produtoRepository.findAll());
     }
