@@ -1,12 +1,12 @@
 package com.ni.easystorage.easystorage.controller;
 
+import com.ni.easystorage.easystorage.business.ProdutoService;
 import com.ni.easystorage.easystorage.entity.ProdutoEntity;
 import com.ni.easystorage.easystorage.mapper.ProdutoEntityMapper;
 import com.ni.easystorage.easystorage.model.Produto;
 import com.ni.easystorage.easystorage.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,19 +16,21 @@ import java.util.Objects;
 public class ProdutoController {
 
     @Autowired
-    private ProdutoRepository produtoRepository;
+    private ProdutoService produtoService;
 
-    @RequestMapping("/Produtos")
-    public List<Produto> lista(String ean){
-        if(Objects.nonNull(ean)){
-            List<ProdutoEntity> produtos = produtoRepository.findAll();
-            return ProdutoEntityMapper.INSTANCE.mapToList(produtos);
-        }else{
-            ProdutoEntity produto = produtoRepository.findByEan(ean);
-            List<ProdutoEntity> produtos = new ArrayList<ProdutoEntity>();
-            produtos.add(produto);
-            return ProdutoEntityMapper.INSTANCE.mapToList(produtos);
-        }
+    @GetMapping("/produto")
+    public List<Produto> lista(){
+        return produtoService.listProduto();
+    }
+
+    @PostMapping("/produto")
+    public void cadastroProduto(@RequestBody Produto produto){
+        produtoService.saveProduto(produto);
+    }
+
+    @GetMapping("/produto/{ean}")
+    public Produto retrieveByEan(@PathVariable String ean){
+        return produtoService.getProdutoByEan(ean);
     }
 
 }

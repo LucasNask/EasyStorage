@@ -1,5 +1,6 @@
 package com.ni.easystorage.easystorage.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 @Getter
@@ -8,11 +9,9 @@ import lombok.*;
 @ToString
 public class Produto {
 
-    private Long id;
-
     private String descricao;
 
-    private Long ean;
+    private String ean;
 
     private String lote;
 

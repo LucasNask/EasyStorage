@@ -18,4 +18,7 @@ public interface ProdutoEntityMapper {
 
     List<Produto> mapToList(List<ProdutoEntity> source);
 
+    @Mapping(target = "quantidade",source = "qtd")
+    ProdutoEntity DTOToEntity(Produto sorce);
+
 }

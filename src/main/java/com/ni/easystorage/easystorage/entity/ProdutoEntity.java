@@ -20,8 +20,8 @@ public class ProdutoEntity {
     @Column
     private String descricao;
 
-    @Column
-    private Long ean;
+    @Column(unique=true)
+    private String ean;
 
     @Column
     private String lote;
