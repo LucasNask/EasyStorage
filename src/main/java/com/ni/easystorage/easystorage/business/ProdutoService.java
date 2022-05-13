@@ -19,7 +19,7 @@ public class ProdutoService {
         return ProdutoEntityMapper.INSTANCE.mapToList(produtoRepository.findAll());
     }
 
-    @Cacheable(cacheNames = "Produto", key = "#ean")
+    @Cacheable(value = "ean", key = "#ean")
     public Produto getProdutoByEan(String ean){
         return ProdutoEntityMapper.INSTANCE.entityToDTO(produtoRepository.findByEan(ean));
     }

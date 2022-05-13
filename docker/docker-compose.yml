@@ -1,12 +1,5 @@
 version: '3.8'
 services:
-  cache:
-    image: redis:latest
-    command: redis-server --requirepass pass123
-    ports:
-      - '6379:6379'
-    environment:
-      - REDIS_PASSWORD
   db:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
