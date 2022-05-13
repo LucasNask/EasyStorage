@@ -16,7 +16,7 @@ public class ProdutoService {
     private ProdutoRepository produtoRepository;
 
     public List<Produto> listProduto(){
-       return ProdutoEntityMapper.INSTANCE.mapToList(produtoRepository.findAll());
+        return ProdutoEntityMapper.INSTANCE.mapToList(produtoRepository.findAll());
     }
 
     @Cacheable(cacheNames = "Produto", key = "#ean")
