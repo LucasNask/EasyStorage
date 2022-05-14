@@ -3,16 +3,18 @@ package com.ni.easystorage.easystorage.mapper;
 import com.ni.easystorage.easystorage.entity.ProdutoEntity;
 import com.ni.easystorage.easystorage.model.Produto;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface ProdutoEntityMapper {
+public interface ProdutoMapper {
 
-    ProdutoEntityMapper INSTANCE = Mappers.getMapper(ProdutoEntityMapper.class);
+    ProdutoMapper INSTANCE = Mappers.getMapper(ProdutoMapper.class);
 
-    ProdutoEntity mapFrom(Produto sorce);
+    Produto mapFrom(ProdutoEntity source);
+
+    List<Produto> mapFrom(List<ProdutoEntity> source);
+
 
 }
