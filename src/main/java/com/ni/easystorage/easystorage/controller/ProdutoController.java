@@ -30,7 +30,7 @@ public class ProdutoController {
 
     @GetMapping("/produto/{ean}")
     public Produto retrieveByEan(@PathVariable String ean){
-        return produtoService.getProdutoByEan(ean);
+        return produtoService.findByEan(ean);
     }
 
 }

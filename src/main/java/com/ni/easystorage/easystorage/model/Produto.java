@@ -19,6 +19,6 @@ public class Produto {
 
     private Double peso;
 
-    private Integer qtd;
+    private Integer quantidade;
 
 }
